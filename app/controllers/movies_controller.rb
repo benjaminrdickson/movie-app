@@ -5,7 +5,10 @@ class MoviesController < ApplicationController
     render json: movie.as_json
   end 
 
-
+  def single_movie
+    movie = Movie.find_by(:title)
+    render json: movie.as_json
+  end 
 
 
 end
