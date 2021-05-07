@@ -10,5 +10,19 @@ class MoviesController < ApplicationController
     render json: movie.as_json
   end 
 
+  def params_method
+    number = params[:number].to_i
+    output_message = Movie.find_by(id: 2)
+    if number < 10
+      output_message = Movie.find_by(id: 1)
+    end
+    
+
+
+    render json: {message: output_message}
+    
+
+  end 
+
 
 end

@@ -7,5 +7,7 @@ get "/one_actor_route", controller: "actors", action: "one_actor_method"
 
 get "/movie_route", controller: "movies", action: "movie_method"
 
+get "movie_params_route", controller: "movies", action: "params_method"
+
 
 end
