@@ -9,5 +9,12 @@ get "/movie_route", controller: "movies", action: "movie_method"
 
 get "movie_params_route", controller: "movies", action: "params_method"
 
+get "/one_actor_query", controller: "actors", action: "one_actor_query"
+
+get "/one_actor_query/:first_name", controller: "actors", action: "one_actor_query"
+
+post "/actor_body", controller: "actors", action: "one_actor"
+
+
 
 end
