@@ -1,19 +1,30 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-get "/actor_route", controller: "actors", action: "actor_method"
+# Movie routes 
 
-get "/one_actor_route", controller: "actors", action: "one_actor_method"
+get "/movies", controller: "movies", action: "index"
 
-get "/movie_route", controller: "movies", action: "movie_method"
+post "/movies", controller: "movies", action: "create"
 
-get "movie_params_route", controller: "movies", action: "params_method"
+get "/movies/:id", controller: "movies", action: "show"
 
-get "/one_actor_query", controller: "actors", action: "one_actor_query"
+post "/movies/:id", controller: "movies", action: "update"
 
-get "/one_actor_query/:first_name", controller: "actors", action: "one_actor_query"
+delete "/movies/:id", controller: "movies", action: "destroy"
 
-post "/actor_body", controller: "actors", action: "one_actor"
+
+# Actor routes
+
+get "/actors", controller: "actors", action: "index"
+
+post "/actors", controller: "actors", action: "create"
+
+get "/actors/:id", controller: "actors", action: "show"
+
+post "/actors/:id", controller: "actors", action: "update"
+
+delete "/actors/:id", controller: "actors", action: "destroy"
 
 
 

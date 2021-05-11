@@ -1,28 +1,41 @@
 class MoviesController < ApplicationController
 
-  def movie_method
+  def index
     movie = Movie.all
     render json: movie.as_json
   end 
 
-  def single_movie
-    movie = Movie.find_by(:title)
+  def create
+    movie = Movie.new(
+      title: params[:title],
+      year: params[:year],
+      plot: params[:plot]
+    )
+    movie.save
     render json: movie.as_json
   end 
 
-  def params_method
-    number = params[:number].to_i
-    output_message = Movie.find_by(id: 2)
-    if number < 10
-      output_message = Movie.find_by(id: 1)
-    end
-    
-
-
-    render json: {message: output_message}
-    
-
+  def show
+    movie = Movie.find(params[:id])
+    render json: movie.as_json
   end 
+
+  def update
+    movie = Movie.find(params[:id])
+    movie.title = params[:title] || movie.title
+    movie.year = params[:year] || movie.year
+    movie.plot = params[:plot] || movie.plot
+    movie.save
+    render json: movie.as_json
+  end 
+
+  def destroy
+    movie = Movie.find(params[:id])
+    movie.destroy
+    render json: {message: "Movie deleted"}
+  end 
+
+
 
 
 end
