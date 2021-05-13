@@ -15,6 +15,11 @@ class ActorsController < ApplicationController
     )
     actor.save
     render json: actor
+    if product.save
+      render json: actor
+    else
+      render json: {errors: actor.errors.full_messages}, status: :unprocessable_entity
+    end
   end 
 
 
@@ -32,7 +37,13 @@ class ActorsController < ApplicationController
     actor.age = params[:age] || actor.age
     actor.save
     render json: actor
+    if product.save
+      render json: actor
+    else
+      render json: {errors: actor.errors.full_messages}, status: :unprocessable_entity
+    end
   end
+  
 
   def destroy
     actor = Actor.find(params[:id])
