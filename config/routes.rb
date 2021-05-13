@@ -9,7 +9,7 @@ post "/movies", controller: "movies", action: "create"
 
 get "/movies/:id", controller: "movies", action: "show"
 
-post "/movies/:id", controller: "movies", action: "update"
+patch "/movies/:id", controller: "movies", action: "update"
 
 delete "/movies/:id", controller: "movies", action: "destroy"
 
@@ -22,7 +22,7 @@ post "/actors", controller: "actors", action: "create"
 
 get "/actors/:id", controller: "actors", action: "show"
 
-post "/actors/:id", controller: "actors", action: "update"
+patch "/actors/:id", controller: "actors", action: "update"
 
 delete "/actors/:id", controller: "actors", action: "destroy"
 
