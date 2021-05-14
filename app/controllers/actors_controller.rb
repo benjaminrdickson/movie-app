@@ -1,7 +1,7 @@
 class ActorsController < ApplicationController
   
   def index
-    actor = Actor.all
+    actor = Actor.all.order(age: :desc)
     render json: actor
   end 
 
@@ -43,7 +43,7 @@ class ActorsController < ApplicationController
       render json: {errors: actor.errors.full_messages}, status: :unprocessable_entity
     end
   end
-  
+
 
   def destroy
     actor = Actor.find(params[:id])

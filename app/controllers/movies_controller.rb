@@ -1,9 +1,10 @@
 class MoviesController < ApplicationController
 
   def index
-    movie = Movie.all
+    movie = Movie.all.where(:english => true)
     render json: movie.as_json
   end 
+
 
   def create
     movie = Movie.new(
