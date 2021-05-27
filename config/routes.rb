@@ -30,6 +30,11 @@ post "/users", controller: "users", action: "create"
 
 post "/sessions", controller: "sessions", action: "create"
 
+get "/movie_genres", controller: "movie_genres", action: "index"
+
+post "/movie_genres", controller: "movie_genres", action: "create"
+
+
 
 
 end
